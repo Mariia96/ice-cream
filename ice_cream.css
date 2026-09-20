@@ -1,8 +1,21 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-background: #F8EDF0;
+    --color-shadow: #EDB5C7;
+    --color-text: #150101;
+    --color-button: #D64374;
+    --color-button-text: #FAFAFA;
+    --color-button-hover: #b83562;
+
+    --font-primary: "Roboto", sans-serif;
+    --font-heading: "Hind Madurai", sans-serif;
 }
 .details {
-    background-color: #F8EDF0;
+    background-color: var(--color-background);
     padding: 2rem 0;
 }
 .details__container {
@@ -32,7 +45,7 @@ body {
     width: 17.6875rem;
     height: 1.6875rem;
 
-    background-color: #EDB5C7;
+    background-color: var(--color-shadow);
     opacity: 0.87;
 
     border-radius: 50%;
@@ -52,30 +65,30 @@ body {
     z-index: 1;
     }
 .details__title {
-    font-family: "Hind Madurai", sans-serif;
+    font-family: var(--font-heading);
     max-width: 350px;
     font-size: 2.75rem;
     font-weight: 600;
     line-height: 1.11;
-    color: #150101;
+    color: var(--color-text);
     margin: 0;
     }
 .details__description {
     margin: 0;
     max-width: 27.625rem;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #150101;
+    color: var(--color-text);
     opacity: 0.6;
 }
 
 .details__button {
-    background-color: #D64374;
-    font-family: "Roboto", sans-serif;
+    background-color: var(--color-button);
+    font-family: var(--font-primary);
     line-height: 1;
-    color: #FAFAFA;
+    color: var(--color-button-text);
     border-radius: 0.3125rem;
     padding: 1rem 3rem;
     align-self: flex-start;
@@ -83,6 +96,9 @@ body {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+}
+.details__button:hover {
+    background-color: var(--color-button-hover);
 }
 
 @media (max-width: 768px) {
