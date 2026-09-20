@@ -4,15 +4,75 @@
     box-sizing: border-box;
 }
 :root {
+    --color-white: #FFFFFF;
     --color-background: #F8EDF0;
     --color-shadow: #EDB5C7;
     --color-text: #150101;
+    --color-black: #000000;
     --color-button: #D64374;
     --color-button-text: #FAFAFA;
     --color-button-hover: #b83562;
 
     --font-primary: "Roboto", sans-serif;
     --font-heading: "Hind Madurai", sans-serif;
+}
+.features {
+    background-color: var(--color-white);
+    padding: 2.5rem 1rem;
+}
+
+.features__container {
+    max-width: 69.8125rem; /* 1117px */
+    height: 12.5rem; /* 200px */
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.125rem; /* 34px */
+}
+ .features__card {
+    width: 16rem;  
+    height: 13rem;
+    background-color: var(--color-white);
+    border-radius: 0.4rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    
+    box-shadow: 1.25rem 1.25rem 3.125rem
+        rgba(0, 0, 0, 0.03);
+    }
+.features__icon {
+    width: 3.375rem;
+    height: 3.375rem;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.features__title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-black);
+    margin-bottom: 0.6rem;
+}
+
+.features__description {
+    max-width: 12.375rem;
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--color-black);
+    opacity: 0.6;
+    text-align: center;
 }
 .details {
     background-color: var(--color-background);
@@ -100,6 +160,130 @@
 .details__button:hover {
     background-color: var(--color-button-hover);
 }
+.products {
+    background-color: var(--color-white);
+    padding: 8.5rem 0;
+}
+.products__container {
+    max-width: 72.5rem; /* 1160px */
+    margin: 0 auto;
+}
+.products__title {
+    font-family: var(--font-heading);
+    font-size: 2.7625rem; /* 44.2px */
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-text);
+    text-align: center;
+}
+.products__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+.products__link {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.products__link--active {
+    color: #000000;
+    position: relative;
+}
+.products__link--active::after {
+    content: "";
+    position: absolute;
+    width: 5.6875rem;
+    height: 0.1875rem;
+    background-color: #d64374;
+
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.75rem;
+}
+.products__item {
+    display: flex;
+    align-items: center;
+}
+.products__media {
+    width: 36.25rem; /* 580px */
+    height: 25.9375rem; /* 415px */
+    flex-shrink: 0;
+}
+
+.products__content {
+    width: 28.375rem; /* 454px */
+}
+.products__item {
+    display: flex;
+    align-items: center;
+}
+.products__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.625rem; /* 10px */
+}
+.products__name {
+    font-family: var(--font-heading);
+    font-size: 1.625rem; /* 26px */
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-text);
+    margin-bottom: 0.6875rem;
+}
+.products__description {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    width: 28.375rem; /* 454px */
+    margin-bottom: 2.125rem; /* 34px */
+}
+.products__price {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem; /* 5px */
+    margin-bottom: 1rem;
+}
+.products__price-current {
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: 500;
+    font-size: 1.625rem; /* 26px */
+    line-height: 1;
+    color: #000000;
+}
+.products__price-old {
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: #000000;
+    opacity: 0.7;
+    text-decoration: line-through;
+}
+.products__button {
+    width: 10.3125rem;
+    height: 3.0625rem;
+    background-color: #d64374;
+    border: none;
+    border-radius: 0.3125rem;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    color: #fafafa;
+
+    cursor: pointer;
+}
 
 @media (max-width: 768px) {
     .details {
@@ -114,5 +298,109 @@
     .details__media {
         width: 100%;
         max-width: 20rem;
+    }
+}
+@media (max-width: 768px) {
+    .features {
+        padding: 2.5rem 1rem;
+    }
+
+    .features__container {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .features__card {
+        width: calc(50% - 1rem);
+        height: 13rem;
+    }
+}
+@media (max-width: 480px) {
+    .features__container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+    }
+
+    .features__card {
+        width: 100%;
+        height: 13rem;
+    }
+}
+@media (max-width: 768px) {
+    .products {
+        padding: 4rem 1rem;
+    }
+
+    .products__title {
+        font-size: 2rem;
+    }
+
+    .products__nav {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .products__link {
+        font-size: 0.875rem;
+    }
+
+    .products__item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products__media {
+        width: 100%;
+        height: auto;
+        max-width: 36.25rem;
+    }
+
+    .products__image {
+        width: 100%;
+        height: auto;
+    }
+
+    .products__content {
+        width: 100%;
+        max-width: 28.375rem;
+    }
+
+    .products__description {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .products {
+        padding: 3rem 1rem;
+    }
+
+    .products__title {
+        font-size: 2rem;
+    }
+
+    .products__nav {
+        gap: 1.5rem 2rem;
+        margin-top: 2.5rem;
+    }
+
+    .products__item {
+        margin-top: 2.5rem;
+    }
+
+    .products__media {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .products__content {
+        width: 100%;
+    }
+
+    .products__description {
+        width: 100%;
     }
 }
